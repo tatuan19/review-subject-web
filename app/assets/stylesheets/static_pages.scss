@@ -8,8 +8,17 @@
 .navbar-brand {
     font-weight: bolder;
     margin: 5px 15px;
+    color: white!important;
 }
 
 .logo {
     font-size: 1.5rem;
+}
+
+.navbar-brand a {
+    color: white!important;
+}
+
+.navbar-brand a:hover {
+    color: #ECE5DD!important;
 }
