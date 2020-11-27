@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Subject Files</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>File url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subject_files.each do |subject_file| %>
+      <tr>
+        <td><%= subject_file.subject_id %></td>
+        <td><%= subject_file.title %></td>
+        <td><%= subject_file.description %></td>
+        <td><%= subject_file.file_url %></td>
+        <td><%= link_to 'Show', subject_file %></td>
+        <td><%= link_to 'Edit', edit_subject_file_path(subject_file) %></td>
+        <td><%= link_to 'Destroy', subject_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subject File', new_subject_file_path %>

@@ -1,0 +1,2 @@
+class SubjectFile < ApplicationRecord
+end

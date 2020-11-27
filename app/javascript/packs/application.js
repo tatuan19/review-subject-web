@@ -16,6 +16,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+// Comment this to use rails format
 import 'bootstrap';
 import './stylesheets/application.scss';
-import "@fortawesome/fontawesome-free/js/all";
+// import "@fortawesome/fontawesome-free/js/all";
