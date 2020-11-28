@@ -1,0 +1,63 @@
+// Place all the styles related to the SubjectFiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.card-margin {
+    margin-bottom: 1.875rem;
+}
+
+@media (min-width: 992px){
+.col-lg-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+}
+
+.card-margin {
+    margin-bottom: 1.875rem;
+}
+.card-employee {
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+}
+.card-employee {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #e6e4e9;
+}
+
+/* Table*/
+.from-subject-name, .file-title {
+  width: 15%;
+}
+
+.file-info {
+  width: 30%;
+}
+
+.file-info .time {
+  font-size: 0.8rem;
+}
+
+.file-url {
+  width: 25%;
+}
+
+.file-button {
+  width: 15%;
+}
+
+.file-button button {
+  font-size: 0.8rem;
+}
+
+.subject-table a:hover {
+  text-decoration: none!important;
+}
