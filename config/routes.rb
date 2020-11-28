@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subject_reviews
   resources :subjects
   resources :subject_files
   root 'static_pages#home'

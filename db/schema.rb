@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_052009) do
+ActiveRecord::Schema.define(version: 2020_11_28_152527) do
 
   create_table "subject_files", force: :cascade do |t|
     t.integer "subject_id"
     t.string "title"
     t.text "description"
     t.string "file_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "subject_reviews", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "subject_id"
+    t.text "review"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
