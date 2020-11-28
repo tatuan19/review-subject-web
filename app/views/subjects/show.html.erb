@@ -34,8 +34,10 @@
  <h2>Review List</h2>
      <ul>
        <% @subject.subject_review.each do |subject_review|%>
-        <li><%= subject_review.review %>
-          </li>
+       
+         
+     <li><b><%= subject_review.user.email if subject_review.user%></b></li> 
+     <%= subject_review.review %>
      <% end %>
      </ul>
      
