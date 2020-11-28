@@ -15,8 +15,12 @@
     font-size: 1.7rem;
 }
 
-.navbar-brand a {
+.navbar-brand a, .nav-link a {
     color: white!important;
+}
+
+.navbar-brand a, .nav-link a:hover {
+    text-decoration: none;
 }
 
 .navbar-brand a:hover {
