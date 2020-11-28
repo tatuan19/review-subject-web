@@ -20,5 +20,24 @@
   <%= @subject.Description %>
 </p>
 
+<h2>Review From</h2>
+ <%= form_with(model: @subject_review, local: true) do |form| %>
+   <div class= "field">
+     <%= form.text_area :review %>
+     <%= form.hidden_field :subject_id, :value => @subject.id %>
+   </div>
+   <div class="actions">
+     <%= form.submit %>
+   </div>
+ <% end %>
+ 
+ <h2>Review List</h2>
+     <ul>
+       <% @subject.subject_review.each do |subject_review|%>
+        <li><%= subject_review.review %>
+          </li>
+     <% end %>
+     </ul>
+     
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>
