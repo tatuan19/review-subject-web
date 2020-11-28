@@ -11,27 +11,45 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :subject_id %>
-    <%= form.number_field :subject_id %>
+<div class="container file-form">
+  <div class="row mb-2">
+    <div class="col-4">
+      <%= form.label :subject_id %>
+    </div>
+    <div class="col-8">
+      <%= form.number_field :subject_id %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="row mb-2">
+    <div class="col-4">
+      <%= form.label :title %>
+    </div>
+    <div class="col-8">
+      <%= form.text_field :title %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="row mb-2">
+    <div class="col-4">
+      <%= form.label :description %>
+    </div>
+    <div class="col-8">
+      <%= form.text_area :description, rows: "3" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :file_url %>
-    <%= form.text_field :file_url %>
+  <div class="row mb-4">
+    <div class="col-4">
+      <%= form.label :file_url %>
+    </div>
+    <div class="col-8">
+      <%= form.text_field :file_url %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="row">
+    <div class="col-12 text-center">
+      <div class="action">
+        <%= form.submit %>
+      </div>
+    </div>
   </div>
+</div>
 <% end %>
