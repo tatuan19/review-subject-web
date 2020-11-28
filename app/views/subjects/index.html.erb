@@ -2,8 +2,8 @@
 
 <h1>Subjects</h1>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
       <th>Subject code</th>
       <th>Subject name</th>
@@ -17,10 +17,10 @@
     <% @subjects.each do |subject| %>
       <tr>
         <td><%= subject.subject_code %></td>
-        <td><%= subject.subject_name %></td>
+        <td><%= link_to subject.subject_name, subject %></td>
         <td><%= subject.number_of_credits %></td>
         <td><%= subject.Description %></td>
-        <td><%= link_to 'Show', subject %></td>
+        
         <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
         <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

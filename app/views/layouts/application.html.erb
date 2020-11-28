@@ -4,14 +4,12 @@
     <title>Review Subjects Website</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-<<<<<<< HEAD
   
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-=======
+
       
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/css/bootstrap.min.css">
->>>>>>> f7862469bb1ebde040329f08076034569643dd2a
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -20,7 +18,7 @@
          <span class="navbar-brand"><i class="logo fas fa-feather"></i><%= link_to " Review Subjects", root_path %></span>
          <ul class="navbar-nav mr-auto text-white">
             <li class="nav-item text-white">
-               <span class="nav-link text-white"><%= link_to "Subjects", subject_files_path %></span>
+               <span class="nav-link text-white"><%= link_to "Subjects", subjects_path %></span>
             </li>
             <li class="nav-item">
                <span class="nav-link text-white"><%= link_to "Review Subjects", subject_files_path %></span>
