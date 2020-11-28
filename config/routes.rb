@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'users/show'
   resources :subject_reviews
   resources :subjects
   resources :subject_files
