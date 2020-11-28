@@ -4,9 +4,8 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.json
   def index
-    @subjects = Subject.all
+    @subjects = Subject.all.page(params[:page]).per(5)
   end
-
   # GET /subjects/1
   # GET /subjects/1.json
   def show
@@ -61,7 +60,7 @@ class SubjectsController < ApplicationController
     end
   end
 
-  private
+    private
     # Use callbacks to share common setup or constraints between actions.
     def set_subject
       @subject = Subject.find(params[:id])
