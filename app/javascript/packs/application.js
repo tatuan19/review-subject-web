@@ -21,4 +21,5 @@ import 'bootstrap';
 import './stylesheets/application.scss';
 import './stylesheets/static_pages.scss';
 import './stylesheets/subject_files.scss';
+import './stylesheets/file_form.scss';
 import "@fortawesome/fontawesome-free/js/all";

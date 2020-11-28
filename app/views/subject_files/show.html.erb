@@ -1,24 +1,56 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @subject_file.subject_id %>
-</p>
+<div class="container mt-5" style="width: 27%">
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-employee card-margin">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-6">
+                            <strong>Subject Info</strong>      
+                        </div>
+                        <div class="col-6 text-right">
+                            <%= link_to 'Edit', edit_subject_file_path(@subject_file) %> |
+                            <%= link_to 'Back', subject_files_path %>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                  <div class="row mb-2">
+                    <div class="col-6">
+                      <strong>Subject:</strong>
+                    </div>
+                    <div class="col-6">
+                      <%= @subject_file.subject_id %>
+                    </div>
+                  </div>
+                  <div class="row mb-2">
+                    <div class="col-6">
+                      <strong>Title:</strong>
+                    </div>
+                    <div class="col-6">
+                      <%= @subject_file.title %>
+                    </div>
+                  </div>
+                  <div class="row mb-2">
+                    <div class="col-6">
+                      <strong>Description:</strong>
+                    </div>
+                    <div class="col-6">
+                      <%= @subject_file.description %>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <strong>File Url:</strong>
+                    </div>
+                    <div class="col-6">
+                      <%= @subject_file.file_url %>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @subject_file.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @subject_file.description %>
-</p>
-
-<p>
-  <strong>File Url:</strong>
-  <%= @subject_file.file_url %>
-</p>
-
-<%= link_to 'Edit', edit_subject_file_path(@subject_file) %> |
-<%= link_to 'Back', subject_files_path %>
