@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container mt-5" style="width: 27%">
+<div class="container" style="width: 50%">
     <div class="row">
         <div class="col-12">
             <div class="card card-employee card-margin">
@@ -21,7 +21,9 @@
                       <strong>Subject:</strong>
                     </div>
                     <div class="col-6">
-                      <%= @subject_file.subject_id %>
+                      <%= link_to @subject_file.subject do %>
+                        <%= @subject_file.subject.subject_name if @subject_file.subject %>
+                      <% end %>
                     </div>
                   </div>
                   <div class="row mb-2">

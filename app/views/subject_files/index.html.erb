@@ -2,7 +2,7 @@
 
 <!--<h1>Subject Files</h1>-->
 
-<div class="container mt-5">
+<div class="container">
   <div class="row">
     <div class="col-12">
         <div class="card card-employee card-margin">
@@ -27,7 +27,9 @@
                                             <% @subject_files.each do |subject_file| %>
                                               <tr>
                                                 <td class="from-subject-name" scope="row">
-                                                    <%= subject_file.subject_id %>
+                                                    <%= link_to subject_file.subject do %>
+                                                        <%= subject_file.subject.subject_name if subject_file.subject%>
+                                                    <% end %>
                                                 </td>
                                                 <td class="file-title">
                                                     <%= subject_file.title %>
