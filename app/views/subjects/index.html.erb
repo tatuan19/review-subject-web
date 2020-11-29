@@ -1,3 +1,4 @@
+<div class="container pt-3">
 <p id="notice"><%= notice %></p>
 <div  style="float: left; with:70%">
   <h1>Subjects</h1>
@@ -9,13 +10,13 @@
 </div>
 
 
-<table class="table">
+<table class="table text-center">
   <thead class="thead-dark">
     <tr>
       <th>Subject code</th>
       <th>Subject name</th>
-      <th>Number of credits</th>
-      <th>Description</th>
+      <th >Number of credits</th>
+      <th>  </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,7 +27,7 @@
         <td><%= subject.subject_code %></td>
         <td><%= link_to subject.subject_name, subject, class: 'text-dark' %></td>
         <td><%= subject.number_of_credits %></td>
-        <td><%= subject.Description %></td>
+      
         
         <td>
           <div class="btn-group text-white" >
@@ -41,5 +42,5 @@
 </table>
 <%= paginate @subjects %>
 <br>
-
+</div>
 
