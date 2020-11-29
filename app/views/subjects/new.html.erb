@@ -1,5 +1,10 @@
-<h1>New Subject</h1>
-
-<%= render 'form', subject: @subject %>
-
-<%= link_to 'Back', subjects_path %>
+<div class="container pt-3" style="max-width: 700px;">
+    <br>
+    <h1>New Subject</h1>
+    <br>
+    <%= render 'form', subject: @subject %>
+    
+    <button type="button"  class="btn btn-primary btn-dark btn-sm " style="width: 100%; margin-top: 5px">
+     <%= link_to 'Back Subjects', subjects_path, class: 'text-white' %>
+    </button>
+</div>
