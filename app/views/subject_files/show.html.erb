@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-6 text-right">
                             <%= link_to 'Edit', edit_subject_file_path(@subject_file) %> |
-                            <%= link_to 'Back to List', :controller => "subject_files", :subject => "all" %>
+                            <%= link_to 'Back to List', subject_files_path(:subject => "all") %>
                         </div>
                     </div>
                 </div>

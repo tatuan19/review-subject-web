@@ -1,5 +1,6 @@
 class SubjectFilesController < ApplicationController
   before_action :set_subject_file, only: [:show, :edit, :update, :destroy]
+  before_action :check_login, only: [:edit, :update, :destroy]
 
   # GET /subject_files
   # GET /subject_files.json
@@ -29,8 +30,7 @@ class SubjectFilesController < ApplicationController
   # POST /subject_files.json
   def create
     @subject_file = SubjectFile.new(subject_file_params)
-    # TODO: cần có user id
-    # @subject_file.user_id = current_user.id
+    @subject_file.user_id = current_user.id
 
     respond_to do |format|
       if @subject_file.save
@@ -76,5 +76,11 @@ class SubjectFilesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def subject_file_params
       params.require(:subject_file).permit(:subject_id, :title, :description, :file_url)
+    end
+    
+    def check_login
+      if current_user.nil?
+        redirect_to new_user_session_path, error: "Please log in first!"
+      end
     end
 end

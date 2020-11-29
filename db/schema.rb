@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_11_29_142608) do
     t.string "file_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "file"
     t.integer "user_id"
   end
 
