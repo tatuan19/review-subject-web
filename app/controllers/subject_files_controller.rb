@@ -4,7 +4,11 @@ class SubjectFilesController < ApplicationController
   # GET /subject_files
   # GET /subject_files.json
   def index
-    @subject_files = SubjectFile.all
+    if (request.query_parameters[:subject] != "all")
+      @subject_files = SubjectFile.where("subject_id = '#{request.query_parameters[:subject]}'")
+    else 
+      @subject_files = SubjectFile.all
+    end
   end
 
   # GET /subject_files/1

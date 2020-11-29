@@ -9,7 +9,7 @@
       </li>
     </ul>
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" ">
+      <li class="nav-item">
          <button type="button"  class="nav-link btn btn-primary" style="width: 100px"><%= link_to 'Edit', edit_subject_path(@subject), class: 'text-white' %></button>
       </li>
     </ul>
@@ -37,6 +37,12 @@
     </button>
   </div>
 
+<hr>
+
+<hr>
+
+
+
 <h2>Review From</h2>
  <%= form_with(model: @subject_review, local: true) do |form| %>
    <div class= "field">
@@ -47,6 +53,8 @@
      <%= form.submit %>
    </div>
  <% end %>
+ 
+ 
  
  <h2>Review List</h2>
      <ul>
