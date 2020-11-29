@@ -2,10 +2,10 @@
 
 one:
   user_id: 1
-  subject_name: MyText
+  subject_id: 1
   review: MyText
 
 two:
   user_id: 1
-  subject_name: MyText
+  subject_id: 1
   review: MyText
