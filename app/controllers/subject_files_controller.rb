@@ -25,6 +25,8 @@ class SubjectFilesController < ApplicationController
   # POST /subject_files.json
   def create
     @subject_file = SubjectFile.new(subject_file_params)
+    # TODO: cần có user id
+    # @subject_file.user_id = current_user.id
 
     respond_to do |format|
       if @subject_file.save

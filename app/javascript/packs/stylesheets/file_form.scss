@@ -1,3 +1,7 @@
+/*
+*    Form CSS
+*/
+
 .required {
     color: red;
 }
@@ -17,5 +21,47 @@
     width: 100%!important;
 }
 
+/*
+*    Table CSS
+*/
+@media (min-width: 992px){
+.col-lg-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+}
 
-// -------------------------------------------
+.card-margin {
+    margin-bottom: 1.875rem;
+}
+.card-employee {
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+}
+.card-employee {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #e6e4e9;
+}
+
+/* Table*/
+.subject-table-2 .from-subject-name {
+    width: 60%;
+}
+
+.subject-table-2 .from-subject-name .from-subject-id {
+    width: 40%;
+}
+
+.thead-custom {
+    background-color: #128c7e;
+    color: white;
+}
