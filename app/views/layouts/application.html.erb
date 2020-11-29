@@ -31,11 +31,15 @@
                <span class="nav-link text-white">Discuss</span>
             </li>
           </ul>
-          
-                  <span class="nav-link"><%= link_to "サインイン", new_user_session_path  %></span>
-                  <span class="nav-link"><%= link_to "ユーザ登録", new_user_registration_path  %></span>
-                   <span class="nav-link"><%= link_to "ログアウト",destroy_user_session_path, method: :delete  %></span>
-                
+          <% if user_signed_in? %>
+                 
+                   <span class="nav-link"><%= link_to "Log out",destroy_user_session_path, method: :delete  %></span>
+               <%= link_to current_user.email  , users_show_path %></p>
+               <% else %>
+               
+                <span class="nav-link"><%= link_to "Log in", new_user_session_path  %></span>
+                <span class="nav-link"><%= link_to "Sign up", new_user_registration_path  %></span> 
+                <% end %>
       </nav>
       
  
