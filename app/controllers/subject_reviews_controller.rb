@@ -25,7 +25,7 @@ class SubjectReviewsController < ApplicationController
   # POST /subject_reviews.json
   def create
     @subject_review = SubjectReview.new(subject_review_params)
-
+    @subject_review.user_id=current_user.id
     respond_to do |format|
       if @subject_review.save
         # format.html { redirect_to @subject_review, notice: 'Subject review was successfully created.' }
