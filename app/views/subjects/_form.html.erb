@@ -1,3 +1,4 @@
+
 <%= form_with(model: subject, local: true) do |form| %>
   <% if subject.errors.any? %>
     <div id="error_explanation">
@@ -12,26 +13,25 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :subject_code %>
-    <%= form.number_field :subject_code %>
+    <strong><%= form.label :subject_code %></strong>
+    <%= form.number_field :subject_code , class: 'form-control'%>
   </div>
 
   <div class="field">
-    <%= form.label :subject_name %>
-    <%= form.text_field :subject_name %>
+    <strong><%= form.label :subject_name %></strong>
+    <%= form.text_field :subject_name , class: 'form-control'%>
   </div>
 
   <div class="field">
-    <%= form.label :number_of_credits %>
-    <%= form.number_field :number_of_credits %>
+    <strong><%= form.label :number_of_credits %></strong><br>
+    <p><%= form.select :number_of_credits, ['1', '2','3','4','5','6','7','8','9','10'], class: 'form-control'%></p>
   </div>
-
-  <div class="field">
-    <%= form.label :Description %>
-    <%= form.text_field :Description %>
+  <div class="form-group">
+    <strong><%= form.label :Description%></strong>
+    <%= form.text_area(:Description, class: 'form-control') %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary btn-sm', style: 'width: 100%'%>
   </div>
 <% end %>
