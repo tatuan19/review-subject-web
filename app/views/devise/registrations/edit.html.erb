@@ -1,3 +1,4 @@
+<div class="edit">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -11,6 +12,10 @@
   <div class="field">
     <%= f.label :age %><br />
     <%= f.number_field :age %>
+  </div>
+   <div class="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %><br>
   </div>
   
   <div class="field">
@@ -51,3 +56,10 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+</div>
+<style>
+  .edit{
+    margin-left: 30px;
+  }
+  
+</style>
