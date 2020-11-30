@@ -67,16 +67,33 @@
  
  
  <h2>Review List</h2>
+
      <ul>
-       <% @subject.subject_review.each do |subject_review|%>
-       
-         
-     <li><b><%= subject_review.user.name if subject_review.user%></b></li> 
-     <%= subject_review.review %>
-     <% end %>
+
+       <% @subject.subject_review.each do |subject_review|%><br>
+          <li  class="comment">
+          <b><%= subject_review.user.name if subject_review.user%></b><br>
+           <%= subject_review.review %>
+           </li> 
+           
+        <% end %>
      </ul>
+     
+   
      
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>
   
 </div>
+
+<style>
+    .comment{
+        border: 1px solid #000;
+        padding-left:5px;
+        list-style : none;
+        border-radius: 10px;
+        padding-top: 5px;
+        padding-botton: 5px;
+        width: 800px;
+    }
+</style>
