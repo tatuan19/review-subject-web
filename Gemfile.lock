@@ -180,12 +180,7 @@ GEM
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
-<<<<<<< HEAD
-    ruby-vips (2.0.17)
-      ffi (~> 1.9)
-=======
 
->>>>>>> 27e9f1622f209ebea1c2e02f9a3352041d1540c6
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -252,11 +247,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
-<<<<<<< HEAD
   image_processing (~> 1.2)
-=======
-
->>>>>>> 27e9f1622f209ebea1c2e02f9a3352041d1540c6
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.2)
