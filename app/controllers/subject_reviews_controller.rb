@@ -1,5 +1,6 @@
 class SubjectReviewsController < ApplicationController
   before_action :set_subject_review, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /subject_reviews
   # GET /subject_reviews.json
@@ -25,6 +26,7 @@ class SubjectReviewsController < ApplicationController
   # POST /subject_reviews.json
   def create
     @subject_review = SubjectReview.new(subject_review_params)
+    @subject_review.user_id=current_user.id
 
     respond_to do |format|
       if @subject_review.save

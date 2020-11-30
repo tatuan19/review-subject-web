@@ -1,5 +1,6 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
+  before_action :check_login, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /subjects
   # GET /subjects.json
@@ -25,7 +26,8 @@ class SubjectsController < ApplicationController
   # POST /subjects.json
   def create
     @subject = Subject.new(subject_params)
-
+    @subject.user_id = current_user.id if current_user
+    
     respond_to do |format|
       if @subject.save
         format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
@@ -70,5 +72,10 @@ class SubjectsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def subject_params
       params.require(:subject).permit(:subject_code, :subject_name, :number_of_credits, :Description)
+    end
+    def check_login
+      if current_user.nil?
+        redirect_to new_user_session_path, error: "Please log in first!"
+      end
     end
 end

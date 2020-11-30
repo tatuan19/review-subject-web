@@ -10,11 +10,23 @@
     </ul>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" ">
-         <button type="button"  class="nav-link btn btn-primary" style="width: 100px"><%= link_to 'Edit', edit_subject_path(@subject), class: 'text-white' %></button>
+      <li class="nav-item">
+           <% if current_user != nil %>
+            <% if current_user.id == @subject.user_id %>
+              <%= link_to edit_subject_path(@subject) do %>
+                <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+              <% end %>
+                    
+              <%= link_to @subject, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+              <% end %>
+            <% end %>
+          <% end %>
       </li>
     </ul>
   </nav>
   <hr>
+  
   <div class="" style="margin-left: 5%">
     <table class="" >
        <tbody>
@@ -32,10 +44,24 @@
     <strong>Description:</strong>
     <p style="margin: 0% 5% 1% 9%"><%= @subject.Description %></p>
     <br>
-    <button type="button"  class="nav-link btn btn-dark btn-sm " style="margin-left: 5%; width: 100px">
-      <%= link_to 'Back', subjects_path, class: 'text-white' %>
-    </button>
-  </div>
+  
+
+    <div class="row">
+        <div class="col-2">
+            <button type="button"  class="nav-link btn btn-dark btn-sm " style="width: 100px">
+              <%= link_to 'Back', subjects_path, class: 'text-white' %>
+            </button>
+        </div>
+        <div class="col-2">
+            <button type="button"  class="nav-link btn btn-info btn-sm " style="width: 100px">
+              <%= link_to "To File", subject_files_path(:subject => @subject.id), class: 'text-white' %>
+            </button>
+        </div>
+        <div class="col-8"></div>
+    </div>
+   </div>
+<hr>
+
 
 <h2>Review From</h2>
  <%= form_with(model: @subject_review, local: true) do |form| %>
@@ -48,17 +74,31 @@
    </div>
  <% end %>
  
+ 
  <h2>Review List</h2>
+
      <ul>
-       <% @subject.subject_review.each do |subject_review|%>
-       
-         
-     <li><b><%= subject_review.user.email if subject_review.user%></b></li> 
-     <%= subject_review.review %>
-     <% end %>
+
+       <% @subject.subject_review.each do |subject_review|%><br>
+          <li  class="comment">
+          <b><%= subject_review.user.name if subject_review.user%></b><br>
+           <%= subject_review.review %>
+           </li> 
+           
+        <% end %>
      </ul>
      
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
-  
 </div>
+ </div>
+
+<style>
+    .comment{
+        border: 1px solid #000;
+        padding-left:5px;
+        list-style : none;
+        border-radius: 10px;
+        padding-top: 5px;
+        padding-botton: 5px;
+        width: 800px;
+    }
+</style>

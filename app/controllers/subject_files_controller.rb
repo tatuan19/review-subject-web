@@ -1,10 +1,16 @@
 class SubjectFilesController < ApplicationController
   before_action :set_subject_file, only: [:show, :edit, :update, :destroy]
+  before_action :check_login, only: [:create, :edit, :update, :destroy]
+  before_action :check_author, only: [:edit, :update, :destroy]
 
   # GET /subject_files
   # GET /subject_files.json
   def index
-    @subject_files = SubjectFile.all
+    if (request.query_parameters[:subject] != "all")
+      @subject_files = SubjectFile.where("subject_id = '#{request.query_parameters[:subject]}'")
+    else 
+      @subject_files = SubjectFile.all
+    end
   end
 
   # GET /subject_files/1
@@ -25,8 +31,7 @@ class SubjectFilesController < ApplicationController
   # POST /subject_files.json
   def create
     @subject_file = SubjectFile.new(subject_file_params)
-    # TODO: cần có user id
-    # @subject_file.user_id = current_user.id
+    @subject_file.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @subject_file.save
@@ -58,7 +63,7 @@ class SubjectFilesController < ApplicationController
   def destroy
     @subject_file.destroy
     respond_to do |format|
-      format.html { redirect_to subject_files_url, notice: 'Subject file was successfully destroyed.' }
+      format.html { redirect_to subject_files_path(:subject => "all"), notice: 'Subject file was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -72,5 +77,17 @@ class SubjectFilesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def subject_file_params
       params.require(:subject_file).permit(:subject_id, :title, :description, :file_url)
+    end
+    
+    def check_login
+      if current_user.nil?
+        redirect_to new_user_session_path, error: "Please log in first!"
+      end
+    end
+    
+    def check_author 
+      if current_user.id != @subject_file.user_id && current_user.nil?
+        redirect_to subject_files_path(:subject => "all"), error: "You haven't permission to do this action"
+      end
     end
 end

@@ -1,0 +1,33 @@
+<div class="profile">
+<h1>Hello <%= @user.name %></h1>
+
+<p>
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar %>
+  <% end %>
+</p>
+
+<h3>Name</h3>
+<%= @user.name %>
+
+<h3>Age </h3>
+<%= @user.age %>
+
+
+<h3>Email</h3>
+<%= @user.email %> 
+</div>
+<style>
+.profile{
+  width:400px;
+    height: 600px;
+    border: 1px solid grey;
+    border-radius: 10px;
+
+}
+  .image_tag{
+    width:300px;
+    height:300px;
+    
+  }
+</style>
