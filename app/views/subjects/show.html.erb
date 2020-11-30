@@ -9,7 +9,7 @@
       </li>
     </ul>
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item" ">
+      <li class="nav-item" >
       <li class="nav-item">
            <% if current_user != nil %>
             <% if current_user.id == @subject.user_id %>
@@ -42,7 +42,7 @@
     </table>
     
     <strong>Description:</strong>
-    <p style="margin: 0% 5% 1% 9%"><%= @subject.Description %></p>
+    <p style="margin: -2.3% 5% 1% 9%"><%= @subject.Description %></p>
     <br>
   
 
@@ -52,8 +52,8 @@
               <%= link_to 'Back', subjects_path, class: 'text-white' %>
             </button>
         </div>
-        <div class="col-2">
-            <button type="button"  class="nav-link btn btn-info btn-sm " style="width: 100px">
+        <div class="col-10">
+            <button type="button"  class="nav-link btn btn-info btn-sm " style="width: 100px; float: right">
               <%= link_to "To File", subject_files_path(:subject => @subject.id), class: 'text-white' %>
             </button>
         </div>
