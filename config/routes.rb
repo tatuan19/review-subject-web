@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :discusses
   devise_for :users
   get 'users/show'
   resources :subject_reviews

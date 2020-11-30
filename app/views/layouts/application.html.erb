@@ -28,7 +28,7 @@
                <span class="nav-link"><%= link_to "Files", subject_files_path(:subject => "all") %></span>
             </li>
             <li class="nav-item">
-               <span class="nav-link text-white">Discuss</span>
+               <span class="nav-link text-white"><%= link_to "Discuss", discusses_path %></span>
             </li>
           </ul>
           <% if user_signed_in? %>

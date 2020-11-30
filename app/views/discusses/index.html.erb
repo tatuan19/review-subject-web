@@ -1,0 +1,40 @@
+<div class="container pt-2">
+<div class="col-11">
+  <p id="notice"><%= notice %></p>
+  <div  style="float: left; with:70%">
+    <h1>Discusses</h1>
+  </div>
+  <div style="with:30%; float: right; margin: 1% 8.5% 5px;">
+    <button type="button" class="btn btn-primary" style="float: left">
+      <span><%= link_to 'New Discuss', new_discuss_path, class: 'text-white' %></span>
+    </button>
+  </div>
+
+  <table class="table text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th>User ID</th>
+        <th >Content</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @discusses.each do |discuss| %>
+        <tr>
+          <td><%= discuss.user_id %></td>
+          <td><%= discuss.content %></td>
+          <td>
+            <%# <div class="btn-group text-white" > %>
+              <%# <button type="button" class="btn btn-primary "><%= link_to 'Show', discuss_path(discuss), class: 'text-white' </button> %>
+              <button type="button" class="btn btn-warning "><%= link_to 'Edit', edit_discuss_path(discuss), class: 'text-white' %></button>
+              <button type="button" class="btn btn-primary btn-danger"><%= link_to 'Destroy', discuss, method: :delete, data: { confirm: 'Are you sure?' } , class: 'text-white'%></button>
+            <%# </div> %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>
+</div>
