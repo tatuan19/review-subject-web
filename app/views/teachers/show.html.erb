@@ -20,5 +20,12 @@
   <%= @teacher.subjects %>
 </p>
 
+<p>
+  <% if @teacher.image.attached? %>
+    <%= image_tag @teacher.image %>
+  <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>
