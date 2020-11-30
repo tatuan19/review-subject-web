@@ -1,0 +1,27 @@
+<%= form_with(model: discuss, local: true) do |form| %>
+  <% if discuss.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(discuss.errors.count, "error") %> prohibited this discuss from being saved:</h2>
+
+      <ul>
+        <% discuss.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <strong><%= form.label :user_id %></strong>
+    <%= form.number_field :user_id , class: 'form-control'%>
+  </div>
+
+  <div class="field">
+    <strong><%= form.label :content %></strong>
+    <%= form.text_area :content , class: 'form-control'%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary btn-sm', style: 'width: 100%'%>
+  </div>
+<% end %>
