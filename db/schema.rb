@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_11_29_142608) do
-=======
-ActiveRecord::Schema.define(version: 2020_11_30_094807) do
->>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
+ActiveRecord::Schema.define(version: 2020_11_30_141348) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -37,8 +33,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_094807) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-<<<<<<< HEAD
-=======
   create_table "discusses", force: :cascade do |t|
     t.integer "user_id"
     t.text "content"
@@ -46,7 +40,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_094807) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
->>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
   create_table "subject_files", force: :cascade do |t|
     t.integer "subject_id"
     t.string "title"
@@ -72,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_094807) do
     t.string "Description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

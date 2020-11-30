@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-<div class="edit">
-=======
->>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -16,13 +13,10 @@
     <%= f.label :age %><br />
     <%= f.number_field :age %>
   </div>
-<<<<<<< HEAD
    <div class="field">
     <%= f.label :avatar %>
     <%= f.file_field :avatar %><br>
   </div>
-=======
->>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
   
   <div class="field">
     <%= f.label :email %><br />
@@ -62,7 +56,6 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
-<<<<<<< HEAD
 </div>
 <style>
   .edit{
@@ -70,5 +63,3 @@
   }
   
 </style>
-=======
->>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f

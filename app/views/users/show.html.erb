@@ -1,5 +1,5 @@
 <div class="profile">
-<h1>プロフィール</h1>
+<h1>Hello <%= @user.name %></h1>
 
 <p>
   <% if @user.avatar.attached? %>
@@ -7,14 +7,14 @@
   <% end %>
 </p>
 
-<h3>名前</h3>
+<h3>Name</h3>
 <%= @user.name %>
 
-<h3>年齢</h3>
+<h3>Age </h3>
 <%= @user.age %>
 
 
-<h3>メールアドレス</h3>
+<h3>Email</h3>
 <%= @user.email %> 
 </div>
 <style>
