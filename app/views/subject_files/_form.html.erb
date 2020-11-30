@@ -17,7 +17,8 @@
       <%= form.label :subject_id, "Subject ID" %>
     </div>
     <div class="col-8">
-      <%= form.number_field :subject_id %>
+      <!--TODO: xu ly van de ko cos Subject nao-->
+      <%= form.select :subject_id, Subject.all.map { |subject| [subject.id] } %>
     </div>
   </div>
   <div class="row mb-2">
@@ -33,7 +34,7 @@
       <%= form.label :description %>
     </div>
     <div class="col-8">
-      <%= form.text_area :description, rows: "3" %>
+      <%= form.text_area :description, rows: "3", style: 'width:100%;' %>
     </div>
   </div>
   <div class="row mb-4">
