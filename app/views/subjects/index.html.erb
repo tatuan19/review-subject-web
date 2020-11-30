@@ -10,8 +10,8 @@
 </div>
 
 
-<table class="table text-center">
-  <thead class="thead-dark">
+<table class="table">
+  <thead class="thead-dark text-center">
     <tr>
       <th>Subject code</th>
       <th>Subject name</th>
@@ -24,24 +24,27 @@
   <tbody>
     <% @subjects.each do |subject| %>
       <tr>
-        <td><%= subject.subject_code %></td>
-        <td><%= link_to subject.subject_name, subject, class: 'text-dark' %></td>
-        <td><%= subject.number_of_credits %></td>
+        <td class="text-center"><%= subject.subject_code %></td>
+        <td class="text-center"><%= link_to subject.subject_name, subject, class: 'text-dark' %></td>
+        <td class="text-center"><%= subject.number_of_credits %></td>
       
         
-        <td>
+        <td class="text-right">
           <%= link_to subject do %>
             <button type="button" class="btn btn-info"><i class="far fa-eye"></i></button>
           <% end %>
-            <% if current_user != nil %>
-                    <%= link_to edit_subject_path(subject) do %>
-                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
-                    <% end %>
+        </td>
+        <td>
+          <% if current_user != nil %>
+            <% if current_user.id == subject.user_id %>
+              <%= link_to edit_subject_path(subject) do %>
+                <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+              <% end %>
                     
-                    <!--TODO: redirect after deleted -->
-                    <%= link_to subject, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                        <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-                    <% end %>
+              <%= link_to subject, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+              <% end %>
+            <% end %>
           <% end %>
         </td>
       </tr>
