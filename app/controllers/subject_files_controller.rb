@@ -1,6 +1,7 @@
 class SubjectFilesController < ApplicationController
   before_action :set_subject_file, only: [:show, :edit, :update, :destroy]
   before_action :check_login, only: [:create, :edit, :update, :destroy]
+  before_action :check_author, only: [:edit, :update, :destroy]
 
   # GET /subject_files
   # GET /subject_files.json
@@ -62,7 +63,7 @@ class SubjectFilesController < ApplicationController
   def destroy
     @subject_file.destroy
     respond_to do |format|
-      format.html { redirect_to subject_files_url, notice: 'Subject file was successfully destroyed.' }
+      format.html { redirect_to subject_files_path(:subject => "all"), notice: 'Subject file was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -81,6 +82,12 @@ class SubjectFilesController < ApplicationController
     def check_login
       if current_user.nil?
         redirect_to new_user_session_path, error: "Please log in first!"
+      end
+    end
+    
+    def check_author 
+      if current_user.id != @subject_file.user_id && current_user.nil?
+        redirect_to subject_files_path(:subject => "all"), error: "You haven't permission to do this action"
       end
     end
 end
