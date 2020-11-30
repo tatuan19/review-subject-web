@@ -30,10 +30,19 @@
       
         
         <td>
-          <div class="btn-group text-white" >
-            <button type="button" class="btn btn-primary "><%= link_to 'Edit', edit_subject_path(subject), class: 'text-white' %></button>
-            <button type="button" class="btn btn-primary btn-danger"><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } , class: 'text-white'%></button>
-          </div>
+          <%= link_to subject do %>
+            <button type="button" class="btn btn-info"><i class="far fa-eye"></i></button>
+          <% end %>
+            <% if current_user != nil %>
+                    <%= link_to edit_subject_path(subject) do %>
+                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                    <% end %>
+                    
+                    <!--TODO: redirect after deleted -->
+                    <%= link_to subject, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                        <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                    <% end %>
+          <% end %>
         </td>
       </tr>
     <% end %>
