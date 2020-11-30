@@ -1,5 +1,10 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
+<<<<<<< HEAD
+=======
+  before_action :check_login, only: [:new, :create, :edit, :update, :destroy]
+
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
 
   # GET /subjects
   # GET /subjects.json
@@ -69,6 +74,15 @@ class SubjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subject_params
+<<<<<<< HEAD
       params.require(:subject).permit(:subject_code, :subject_name, :number_of_credits, :Description)
+=======
+      params.require(:subject).permit(:subject_id, :subject_name, :number_of_credits, :Description)
+    end
+    def check_login
+      if current_user.nil?
+        redirect_to new_user_session_path, error: "Please log in first!"
+      end
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
     end
 end

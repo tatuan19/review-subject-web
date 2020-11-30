@@ -25,16 +25,27 @@
             </li>
             </li>
              <li class="nav-item">
+<<<<<<< HEAD
                <span class="nav-link"><%= link_to "Files", subject_files_path %></span>
             </li>
             <li class="nav-item">
                <span class="nav-link text-white">Discuss</span>
+=======
+               <span class="nav-link"><%= link_to "Files", subject_files_path(:subject => "all") %></span>
+            </li>
+            <li class="nav-item">
+               <span class="nav-link text-white"><%= link_to "Discuss", discusses_path %></span>
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
             </li>
           </ul>
           <% if user_signed_in? %>
                  
                    <span class="nav-link"><%= link_to "Log out",destroy_user_session_path, method: :delete  %></span>
+<<<<<<< HEAD
                <%= link_to current_user.name  , users_show_path %></p>
+=======
+               <%= link_to current_user.email  , users_show_path %></p>
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
                <% else %>
                
                 <span class="nav-link"><%= link_to "Log in", new_user_session_path  %></span>

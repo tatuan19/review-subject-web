@@ -1,11 +1,17 @@
 <div class="profile">
+<<<<<<< HEAD
 <h1>Hello <%= @user.name %></h1>
 <div class = "img">
+=======
+<h1>プロフィール</h1>
+
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
 <p>
   <% if @user.avatar.attached? %>
     <%= image_tag @user.avatar %>
   <% end %>
 </p>
+<<<<<<< HEAD
 </div>
 <h3>Name</h3>
 <%= @user.name %>
@@ -19,6 +25,18 @@
 <br>
  <%= link_to 'Edit', edit_user_registration_path %> | <%= link_to "Back", :back %>
   </div>
+=======
+
+<h3>名前</h3>
+<%= @user.name %>
+
+<h3>年齢</h3>
+<%= @user.age %>
+
+
+<h3>メールアドレス</h3>
+<%= @user.email %> 
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
 </div>
 <style>
 .profile{
@@ -26,9 +44,12 @@
     height: 600px;
     border: 1px solid grey;
     border-radius: 10px;
+<<<<<<< HEAD
     margin: 0 auto;
     margitn-left: 30px;
     margin-top:30px;
+=======
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
 }
   .image_tag{
     width:300px;

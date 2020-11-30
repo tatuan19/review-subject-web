@@ -9,7 +9,11 @@
       </li>
     </ul>
     <ul class="navbar-nav mr-auto">
+<<<<<<< HEAD
       <li class="nav-item" ">
+=======
+      <li class="nav-item">
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
          <button type="button"  class="nav-link btn btn-primary" style="width: 100px"><%= link_to 'Edit', edit_subject_path(@subject), class: 'text-white' %></button>
       </li>
     </ul>
@@ -32,11 +36,35 @@
     <strong>Description:</strong>
     <p style="margin: 0% 5% 1% 9%"><%= @subject.Description %></p>
     <br>
+<<<<<<< HEAD
     <button type="button"  class="nav-link btn btn-dark btn-sm " style="margin-left: 5%; width: 100px">
       <%= link_to 'Back', subjects_path, class: 'text-white' %>
     </button>
   </div>
 
+=======
+    <div class="row">
+        <div class="col-2">
+            <button type="button"  class="nav-link btn btn-dark btn-sm " style="width: 100px">
+              <%= link_to 'Back', subjects_path, class: 'text-white' %>
+            </button>
+        </div>
+        <div class="col-2">
+            <button type="button"  class="nav-link btn btn-info btn-sm " style="width: 100px">
+              <%= link_to "To File", subject_files_path(:subject => @subject.id), class: 'text-white' %>
+            </button>
+        </div>
+        <div class="col-8"></div>
+    </div>
+  </div>
+
+<hr>
+
+<hr>
+
+
+
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
 <h2>Review From</h2>
  <%= form_with(model: @subject_review, local: true) do |form| %>
    <div class= "field">
@@ -48,6 +76,7 @@
    </div>
  <% end %>
  
+<<<<<<< HEAD
  <h2>Review List</h2>
      <ul>
        <% @subject.subject_review.each do |subject_review|%>
@@ -58,7 +87,41 @@
      <% end %>
      </ul>
      
+=======
+ 
+ 
+ <h2>Review List</h2>
+
+     <ul>
+
+       <% @subject.subject_review.each do |subject_review|%><br>
+          <li  class="comment">
+          <b><%= subject_review.user.name if subject_review.user%></b><br>
+           <%= subject_review.review %>
+           </li> 
+           
+        <% end %>
+     </ul>
+     
+   
+     
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>
   
 </div>
+<<<<<<< HEAD
+=======
+
+<style>
+    .comment{
+        border: 1px solid #000;
+        padding-left:5px;
+        list-style : none;
+        border-radius: 10px;
+        padding-top: 5px;
+        padding-botton: 5px;
+        width: 800px;
+    }
+</style>
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f

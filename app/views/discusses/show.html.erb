@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @discuss.user_id %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @discuss.content %>
+</p>
+
+<%= link_to 'Edit', edit_discuss_path(@discuss) %> |
+<%= link_to 'Back', discusses_path %>

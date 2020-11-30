@@ -1,12 +1,16 @@
+<<<<<<< HEAD
 <p id="notice"><%= notice %></p>
 
 <!--<h1>Subject Files</h1>-->
 
+=======
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
 <div class="container">
   <div class="row">
     <div class="col-12">
         <div class="card card-employee card-margin">
             <div class="card-body">
+<<<<<<< HEAD
                 <div class="row search-body">
                     <div class="col-lg-12">
                         <div class="search-result">
@@ -60,6 +64,74 @@
                                     </table>
                                 </div>
                             </div>
+=======
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-responsive">
+                            <table class="table widget-26 table-striped subject-table mb-0">
+                                <% if current_user != nil %>
+                                    <caption><%= link_to '  New Subject File', new_subject_file_path %></caption>
+                                <% end %>
+                                <thead class="thead-custom">
+                                    <tr>
+                                        <th scope="col">Subject</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">File URL</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% @subject_files.each do |subject_file| %>
+                                      <tr>
+                                        <!-- TODO: xu ly van de Subject da bi xoa-->
+                                        <td class="from-subject-name" scope="row">
+                                            <%= link_to subject_file.subject do %>
+                                                <%= subject_file.subject.subject_name if subject_file.subject%>
+                                            <% end %>
+                                        </td>
+                                        <td class="file-title">
+                                            <%= subject_file.title %>
+                                        </td>
+                                        <td class="file-info">
+                                            <p class="type m-0"><%= subject_file.description %></p>
+                                            <p class="m-0"><span class="text-muted time"><%= time_ago_in_words(subject_file.created_at) %></span></p>
+                                        </td>
+                                        <td class="file-url">
+                                            <p class="type m-0">
+                                                <%= link_to subject_file.file_url do %>
+                                                <%= subject_file.file_url[0...50] %>...
+                                                <% end %>
+                                            </p>
+                                        </td>
+                                        <td class="file-button text-right">
+                                            <%= link_to subject_file do %>
+                                                <button type="button" class="btn btn-info"><i class="far fa-eye"></i></button>
+                                            <% end %>
+                                            <% if current_user != nil %>
+                                                <% if current_user.id == subject_file.user_id %>
+                                                    <%= link_to edit_subject_file_path(subject_file) do %>
+                                                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                                                    <% end %>
+                                                    
+                                                    <!--TODO: redirect after deleted -->
+                                                    <%= link_to subject_file, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                                                        <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                                                    <% end %>
+                                                <% end %>
+                                            <% end %>
+                                        </td>
+                                      </tr>
+                                      <!--<br>-->
+                                    <% end %>
+                                </tbody>
+                            </table>
+                            <% if notice != nil %>
+                                <div class="alert alert-success text-center" role="alert">
+                                      <%= notice %>
+                                </div>
+                            <% end %>
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 <p id="notice"><%= notice %></p>
 
+=======
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
 <div class="container" style="width: 50%">
     <div class="row">
         <div class="col-12">
@@ -10,8 +13,12 @@
                             <strong>Subject Info</strong>      
                         </div>
                         <div class="col-6 text-right">
+<<<<<<< HEAD
                             <%= link_to 'Edit', edit_subject_file_path(@subject_file) %> |
                             <%= link_to 'Back', subject_files_path %>
+=======
+                            <%= link_to 'Back to List', subject_files_path(:subject => "all") %>
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
                         </div>
                     </div>
                 </div>
@@ -44,12 +51,26 @@
                   </div>
                   <div class="row">
                     <div class="col-6">
+<<<<<<< HEAD
                       <strong>File Url:</strong>
                     </div>
                     <div class="col-6">
                       <%= @subject_file.file_url %>
                     </div>
                   </div>
+=======
+                      <strong>File URL:</strong>
+                    </div>
+                    <div class="col-6">
+                      <%= link_to @subject_file.file_url, @subject_file.file_url %>
+                    </div>
+                  </div>
+                  <% if notice != nil %>
+                    <div class="alert alert-success text-center mt-3 mb-0" role="alert">
+                          <%= notice %>
+                    </div>
+                  <% end %>
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
                 </div>
             </div>
         </div>

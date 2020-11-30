@@ -1,6 +1,10 @@
 class SubjectReviewsController < ApplicationController
   before_action :set_subject_review, only: [:show, :edit, :update, :destroy]
+<<<<<<< HEAD
 
+=======
+  before_action :authenticate_user!
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
   # GET /subject_reviews
   # GET /subject_reviews.json
   def index
@@ -25,7 +29,11 @@ class SubjectReviewsController < ApplicationController
   # POST /subject_reviews.json
   def create
     @subject_review = SubjectReview.new(subject_review_params)
+<<<<<<< HEAD
 
+=======
+    @subject_review.user_id=current_user.id
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
     respond_to do |format|
       if @subject_review.save
         # format.html { redirect_to @subject_review, notice: 'Subject review was successfully created.' }
