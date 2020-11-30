@@ -1,6 +1,6 @@
 class SubjectFilesController < ApplicationController
   before_action :set_subject_file, only: [:show, :edit, :update, :destroy]
-  before_action :check_login, only: [:edit, :update, :destroy]
+  before_action :check_login, only: [:create, :edit, :update, :destroy]
 
   # GET /subject_files
   # GET /subject_files.json
@@ -30,7 +30,7 @@ class SubjectFilesController < ApplicationController
   # POST /subject_files.json
   def create
     @subject_file = SubjectFile.new(subject_file_params)
-    @subject_file.user_id = current_user.id
+    @subject_file.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @subject_file.save
