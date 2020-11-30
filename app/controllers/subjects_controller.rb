@@ -1,5 +1,6 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /subjects
   # GET /subjects.json
@@ -69,6 +70,6 @@ class SubjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subject_params
-      params.require(:subject).permit(:subject_code, :subject_name, :number_of_credits, :Description)
+      params.require(:subject).permit(:subject_id, :subject_name, :number_of_credits, :Description)
     end
 end

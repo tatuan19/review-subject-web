@@ -71,7 +71,7 @@
        <% @subject.subject_review.each do |subject_review|%>
        
          
-     <li><b><%= subject_review.user.email if subject_review.user%></b></li> 
+     <li><b><%= subject_review.user.name if subject_review.user%></b></li> 
      <%= subject_review.review %>
      <% end %>
      </ul>
