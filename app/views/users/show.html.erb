@@ -1,5 +1,5 @@
 <div class="profile">
-<h1>プロフィール</h1>
+<h1>Hello <%= @user.name %></h1>
 <div class = "img">
 <p>
   <% if @user.avatar.attached? %>
@@ -7,17 +7,17 @@
   <% end %>
 </p>
 </div>
-<h3>名前</h3>
+<h3>Name</h3>
 <%= @user.name %>
 
-<h3>年齢</h3>
+<h3>Age</h3>
 <%= @user.age %>
 
 
-<h3>メールアドレス</h3>
+<h3>Email</h3>
 <%= @user.email %> 
 <br>
- <%= link_to 'Edit', edit_user_registration_path %>
+ <%= link_to 'Edit', edit_user_registration_path %> <%= link_to "Back", :back %>
   </div>
 </div>
 <style>
@@ -30,7 +30,7 @@
     margitn-left: 30px;
     margin-top:30px;
 }
-  .img{
+  .image_tag{
     width:300px;
     height:300px;
     
