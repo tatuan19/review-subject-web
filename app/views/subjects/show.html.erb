@@ -9,6 +9,7 @@
       </li>
     </ul>
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item" ">
       <li class="nav-item">
            <% if current_user != nil %>
             <% if current_user.id == @subject.user_id %>
@@ -43,6 +44,8 @@
     <strong>Description:</strong>
     <p style="margin: 0% 5% 1% 9%"><%= @subject.Description %></p>
     <br>
+  
+
     <div class="row">
         <div class="col-2">
             <button type="button"  class="nav-link btn btn-dark btn-sm " style="width: 100px">
@@ -56,12 +59,8 @@
         </div>
         <div class="col-8"></div>
     </div>
-  </div>
-
+   </div>
 <hr>
-
-<hr>
-
 
 
 <h2>Review From</h2>
@@ -76,7 +75,6 @@
  <% end %>
  
  
- 
  <h2>Review List</h2>
 
      <ul>
@@ -89,8 +87,9 @@
            
         <% end %>
      </ul>
-  
+     
 </div>
+ </div>
 
 <style>
     .comment{

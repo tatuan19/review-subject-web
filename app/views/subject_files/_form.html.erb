@@ -17,6 +17,7 @@
       <%= form.label :subject_id, "Subject ID" %>
     </div>
     <div class="col-8">
+
       <!--TODO: xu ly van de ko cos Subject nao-->
       <%= form.select :subject_id, Subject.all.map { |subject| [subject.id] } %>
     </div>

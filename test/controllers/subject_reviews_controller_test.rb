@@ -17,7 +17,11 @@ class SubjectReviewsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create subject_review" do
     assert_difference('SubjectReview.count') do
+<<<<<<< HEAD
+      post subject_reviews_url, params: { subject_review: { review: @subject_review.review, subject_id: @subject_review.subject_id, user_id: @subject_review.user_id } }
+=======
       post subject_reviews_url, params: { subject_review: { review: @subject_review.review, subject_id: @subject_review.subject_id, user_id: @subject_review.user_id} }
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
     end
 
     assert_redirected_to subject_review_url(SubjectReview.last)
@@ -34,7 +38,11 @@ class SubjectReviewsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update subject_review" do
+<<<<<<< HEAD
+    patch subject_review_url(@subject_review), params: { subject_review: { review: @subject_review.review, subject_id: @subject_review.subject_id, user_id: @subject_review.user_id } }
+=======
     patch subject_review_url(@subject_review), params: { subject_review: { review: @subject_review.review, subject_id: @subject_review.subject_id} }
+>>>>>>> 8e859561bdbdea7ed337f80ce44dd86a61ee8c4f
     assert_redirected_to subject_review_url(@subject_review)
   end
 
